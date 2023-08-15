@@ -1,0 +1,11 @@
+<form>
+  <fieldset>
+    <legend>Formulário</legend>
+    <input type="text" name="campo" [(ngModel)]="campo">
+    
+    <button (click)="show()">Exibir</button>
+  </fieldset>
+
+  {{campo}}
+</form>
+<router-outlet></router-outlet>
