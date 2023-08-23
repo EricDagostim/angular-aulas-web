@@ -12,13 +12,13 @@ const routes: Routes = [
   {path: 'categoria', component:CategoriaComponent,
     children:[
       {
-        path: '', component:CategoriaListarComponent
-      },
-      {
-        path: 'adicionar', component:CategoriaFormComponent
+        path: '', redirectTo:'listar', pathMatch:'full'
       },
       {
         path: 'listar', component:CategoriaListarComponent
+      },
+      {
+        path: 'adicionar', component:CategoriaFormComponent
       }
     ]
   }
