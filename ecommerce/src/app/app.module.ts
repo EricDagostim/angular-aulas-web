@@ -13,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFireModule.initializeApp(
       {
         apiKey: "AIzaSyAf9CDwsnK_ntlzri6qATskVBWOO0agXzs",

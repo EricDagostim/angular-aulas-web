@@ -14,9 +14,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">#1</th>
-            <td>Brandon Jacob</td>
+          
+          <tr *ngFor="let categoria of dados">
+            <th scope="row"> 01 </th>
+            <td>{{categoria.descricao}}</td>
             <td>
                 <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
             </td>
@@ -24,46 +25,7 @@
                 <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">#1</th>
-            <td>Brandon Jacob</td>
-            <td>
-                <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-            </td>
-            <td>
-                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">#1</th>
-            <td>Brandon Jacob</td>
-            <td>
-                <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-            </td>
-            <td>
-                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">#1</th>
-            <td>Brandon Jacob</td>
-            <td>
-                <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-            </td>
-            <td>
-                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">#1</th>
-            <td>Brandon Jacob</td>
-            <td>
-                <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
-            </td>
-            <td>
-                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-            </td>
-          </tr>
+
         </tbody>
       </table>
       <!-- End Table with stripped rows -->
