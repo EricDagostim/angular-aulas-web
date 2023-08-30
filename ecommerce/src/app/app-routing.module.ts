@@ -19,6 +19,9 @@ const routes: Routes = [
       },
       {
         path: 'adicionar', component:CategoriaFormComponent
+      },
+      {
+        path: 'adicionar/:indice', component:CategoriaFormComponent
       }
     ]
   }

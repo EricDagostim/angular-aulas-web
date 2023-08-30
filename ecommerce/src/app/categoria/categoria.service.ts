@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriaService {
 
-  constructor(public firebase_service:FirebaseService) { }
+  constructor(
+    public firebase_service:FirebaseService,
+    public router:Router
+    ) {
+
+  }
 
   ref(){
     return this.firebase_service.ref().child('/categoria');
@@ -19,5 +25,19 @@ export class CategoriaService {
 
   listar(){
     return this.ref();
+  }
+
+  excluir(indice:string){
+    this
+    .ref()
+    .child('/' + indice)
+    .remove()
+    .then();
+  }
+
+  editar(indice:string,dados:any){
+    this.ref().child('/' + indice)
+    .update(dados)
+    .then();
   }
 }

@@ -9,6 +9,7 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaListarComponent implements OnInit{
 
   public dados:Array<any> = [];
+  router: any;
 
   constructor(public categoriaService:CategoriaService){
 
@@ -16,8 +17,40 @@ export class CategoriaListarComponent implements OnInit{
   ngOnInit(): void {
     this.categoriaService.listar()
     .on('value',(snapshot:any) => {
-      this.dados = Object.values( snapshot.val() );
+
+      // Limpa variavel local com os dados
+      this.dados.splice(0,this.dados.length);
+
+      // Dados retornados do Firebase
+      let response = snapshot.val();
+
+      // Não setar valores caso não venha
+      // nenhum registro
+      if (response == null) return;
+
+      // Percorre a coleção de dados 
+      Object.values( response )
+      .forEach(
+        (e:any,i:number) => {
+          // Adiciona os elementos no vetor
+          // de dados
+          this.dados.push({
+            descricao: e.descricao,
+            indice: Object.keys(snapshot.val())[i]
+          });
+        }
+      );
     });
+  }
+
+  excluir(key:string){
+    this.categoriaService.excluir(key);
+  }
+
+  editar(key:string){
+    this
+    .router
+    .navigate(['/categoria/adicionar/' + key]);
   }
 
   
