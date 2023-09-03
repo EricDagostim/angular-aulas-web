@@ -1,61 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../categoria.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-categoria-listar',
   templateUrl: './categoria-listar.component.html',
   styleUrls: ['./categoria-listar.component.scss']
 })
-export class CategoriaListarComponent implements OnInit{
+export class CategoriaListarComponent implements OnInit {
 
-  public dados:Array<any> = [];
-  router: any;
+  public dados: Array<any> = [];
 
-  constructor(public categoriaService:CategoriaService){
+  constructor(
+    public categoriaService: CategoriaService,
+    public router:Router) {
 
   }
   ngOnInit(): void {
     this.categoriaService.listar()
-    .on('value',(snapshot:any) => {
+      .on('value', (snapshot: any) => {
 
-      // Limpa variavel local com os dados
-      this.dados.splice(0,this.dados.length);
+        // Limpa variavel local com os dados
+        this.dados.splice(0, this.dados.length);
 
-      // Dados retornados do Firebase
-      let response = snapshot.val();
+        // Dados retornados do Firebase
+        let response = snapshot.val();
 
-      // Não setar valores caso não venha
-      // nenhum registro
-      if (response == null) return;
+        // Não setar valores caso não venha
+        // nenhum registro
+        if (response == null) return;
 
-      // Percorre a coleção de dados 
-      Object.values( response )
-      .forEach(
-        (e:any,i:number) => {
-          // Adiciona os elementos no vetor
-          // de dados
-          this.dados.push({
-            descricao: e.descricao,
-            indice: Object.keys(snapshot.val())[i]
-          });
-        }
-      );
-    });
+        // Percorre a coleção de dados 
+        Object.values(response)
+          .forEach(
+            (e: any, i: number) => {
+              // Adiciona os elementos no vetor
+              // de dados
+              this.dados.push({
+                descricao: e.descricao,
+                indice: Object.keys(snapshot.val())[i]
+              });
+            }
+          );
+      });
   }
 
-  excluir(key:string){
+  excluir(key: string) {
     this.categoriaService.excluir(key);
   }
 
-  editar(key:string){
+  editar(key: string) {
     this
-    .router
-    .navigate(['/categoria/adicionar/' + key]);
+      .router
+      .navigate(['/categoria/adicionar/' + key]);
   }
 
-  
 
 
-  
+
+
+
 
 }

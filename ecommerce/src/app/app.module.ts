@@ -14,6 +14,10 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaListarComponent } from './categoria/categoria-listar/categoria-listar.component';
 import { CategoriaFormComponent } from './categoria/categoria-form/categoria-form.component';
 import { FormsModule } from '@angular/forms';
+import { FormaDePagamentoComponent } from './forma-de-pagamento/forma-de-pagamento.component';
+import { FormaDePagamentoAdicionarComponent } from './forma-de-pagamento/forma-de-pagamento-adicionar/forma-de-pagamento-adicionar.component';
+import { FormaDePagamentoEditarComponent } from './forma-de-pagamento/forma-de-pagamento-editar/forma-de-pagamento-editar.component';
+import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-pagamento-listar/forma-de-pagamento-listar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { FormsModule } from '@angular/forms';
     CategoriaComponent,
     CategoriaListarComponent,
     CategoriaFormComponent,
+    FormaDePagamentoComponent,
+    FormaDePagamentoAdicionarComponent,
+    FormaDePagamentoEditarComponent,
+    FormaDePagamentoListarComponent,
   ],
   imports: [
     BrowserModule,

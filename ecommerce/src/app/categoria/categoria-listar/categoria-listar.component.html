@@ -1,7 +1,7 @@
 <div class="card">
     <button class="btn btn-success" routerLink="../adicionar">Novo</button>
     <div class="card-body">
-      <h5 class="card-title">Table with stripped rows</h5>
+      <h5 class="card-title">Lista de categorias</h5>
 
       <!-- Table with stripped rows -->
       <table class="table table-striped">
@@ -19,7 +19,7 @@
             <th scope="row"> {{categoria.indice}} </th>
             <td>{{categoria.descricao}}</td>
             <td>
-                <button class="btn btn-warning"><i class="bi bi-pencil" (click)="editar(categoria.indice)"></i></button>
+                <button class="btn btn-warning" (click)="editar(categoria.indice)"><i class="bi bi-pencil"></i></button>
             </td>
             <td>
                 <button class="btn btn-danger" (click)="excluir(categoria.indice)"><i class="bi bi-trash"></i></button>
