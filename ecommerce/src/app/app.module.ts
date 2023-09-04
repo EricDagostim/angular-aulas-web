@@ -16,7 +16,6 @@ import { CategoriaFormComponent } from './categoria/categoria-form/categoria-for
 import { FormsModule } from '@angular/forms';
 import { FormaDePagamentoComponent } from './forma-de-pagamento/forma-de-pagamento.component';
 import { FormaDePagamentoAdicionarComponent } from './forma-de-pagamento/forma-de-pagamento-adicionar/forma-de-pagamento-adicionar.component';
-import { FormaDePagamentoEditarComponent } from './forma-de-pagamento/forma-de-pagamento-editar/forma-de-pagamento-editar.component';
 import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-pagamento-listar/forma-de-pagamento-listar.component';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-p
     CategoriaFormComponent,
     FormaDePagamentoComponent,
     FormaDePagamentoAdicionarComponent,
-    FormaDePagamentoEditarComponent,
     FormaDePagamentoListarComponent,
   ],
   imports: [

@@ -21,4 +21,16 @@ export class FormaDePagamentoService {
   salvar(dados:any){
     this.ref().push(dados).then();
   }
+
+  listar(){
+    return this.ref();
+  }
+
+  excluir(indice:string){
+    this.ref().child('/' + indice).remove().then();
+
+  }
+  editar(indice:string,dados:any){
+    this.ref().child('/' + indice).update(dados).then();
+  }
 }

@@ -41,9 +41,9 @@ export class FormaDePagamentoAdicionarComponent {
     if(this.indice == ''){
       this.formaDePagamentoService.salvar(dados);
     }
-    // else{
-    //   this.formaDePagamentoService.editar(this.indice,dados);
-    // }
+    else{
+      this.formaDePagamentoService.editar(this.indice,dados);
+    }
   }
 
 }

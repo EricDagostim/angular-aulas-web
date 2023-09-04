@@ -35,6 +35,9 @@ children:[
   },
   {
     path: 'adicionar', component:FormaDePagamentoAdicionarComponent
+  },
+  {
+    path: 'adicionar/:indice', component:FormaDePagamentoAdicionarComponent
   }
 ]}
   // Usar children para subrotas
