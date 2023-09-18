@@ -7,39 +7,146 @@ import { CategoriaListarComponent } from './categoria/categoria-listar/categoria
 import { FormaDePagamentoComponent } from './forma-de-pagamento/forma-de-pagamento.component';
 import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-pagamento-listar/forma-de-pagamento-listar.component';
 import { FormaDePagamentoAdicionarComponent } from './forma-de-pagamento/forma-de-pagamento-adicionar/forma-de-pagamento-adicionar.component';
+import { SubCategoriaComponent } from './sub-categoria/sub-categoria.component';
+import { SubCategoriaListarComponent } from './sub-categoria/sub-categoria-listar/sub-categoria-listar.component';
+import { SubCategoriaFormComponent } from './sub-categoria/sub-categoria-form/sub-categoria-form.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
+import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'home', component:HomeComponent},
- 
-  {path: 'categoria', component:CategoriaComponent,
-    children:[
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+
+  {
+    path: 'categoria', component: CategoriaComponent,
+    children: [
       {
-        path: '', redirectTo:'listar', pathMatch:'full'
+        path: '', redirectTo: 'listar', pathMatch: 'full'
       },
       {
-        path: 'listar', component:CategoriaListarComponent
+        path: 'listar', component: CategoriaListarComponent
       },
       {
-        path: 'adicionar', component:CategoriaFormComponent
+        path: 'adicionar', component: CategoriaFormComponent
       },
       {
-        path: 'adicionar/:indice', component:CategoriaFormComponent
+        path: 'adicionar/:indice', component: CategoriaFormComponent
       }
     ]
   },
-  {path: 'forma-de-pagamento', component:FormaDePagamentoComponent,
-children:[
   {
-    path: 'listar', component:FormaDePagamentoListarComponent
+    path: 'forma-de-pagamento', component: FormaDePagamentoComponent,
+    children: [
+      {
+        path: 'listar', component: FormaDePagamentoListarComponent
+      },
+      {
+        path: 'adicionar', component: FormaDePagamentoAdicionarComponent
+      },
+      {
+        path: 'adicionar/:indice', component: FormaDePagamentoAdicionarComponent
+      }
+    ]
   },
   {
-    path: 'adicionar', component:FormaDePagamentoAdicionarComponent
+    path: 'sub-categoria',
+    component: SubCategoriaComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: SubCategoriaListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: SubCategoriaFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: SubCategoriaFormComponent,
+      }
+    ]
   },
   {
-    path: 'adicionar/:indice', component:FormaDePagamentoAdicionarComponent
+    path: 'usuario',
+    component: UsuarioComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: UsuarioListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: UsuarioFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: UsuarioFormComponent,
+      }
+    ]
+  },
+  {
+    path: 'produto',
+    component: ProdutoComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: ProdutoListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: ProdutoFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: ProdutoFormComponent,
+      }
+    ]
+  },
+  {
+    path: 'cliente',
+    component: ClienteComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: ClienteListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: ClienteFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: ClienteFormComponent
+      }
+    ]
   }
-]}
   // Usar children para subrotas
 ];
 

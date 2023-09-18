@@ -1,0 +1,38 @@
+<div>
+    <div class="d-flex justify-content-between mb-2">
+        <h2>Clientes</h2>
+        <button class="btn btn-success" routerLink="../adicionar">Novo</button>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="dados.length <= 0" class="table-warning text-center">
+                 <td colspan="5">Nenhum registro encontrado!</td>
+            </tr>
+            <tr *ngFor="let cliente of dados;">
+                <th scope="row">{{cliente.id}}</th>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.email}}</td>
+                <td>
+                    <button class="btn btn-warning" title="Editar" (click)="editar(cliente.indice)">
+                        <i class="bx bxs-pencil"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" title="Excluir" (click)="excluir(cliente.indice, cliente.nome)">
+                        <i class="bx bxs-trash"></i>
+                    </button>                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -17,6 +17,19 @@ import { FormsModule } from '@angular/forms';
 import { FormaDePagamentoComponent } from './forma-de-pagamento/forma-de-pagamento.component';
 import { FormaDePagamentoAdicionarComponent } from './forma-de-pagamento/forma-de-pagamento-adicionar/forma-de-pagamento-adicionar.component';
 import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-pagamento-listar/forma-de-pagamento-listar.component';
+import { SubCategoriaComponent } from './sub-categoria/sub-categoria.component';
+import { SubCategoriaFormComponent } from './sub-categoria/sub-categoria-form/sub-categoria-form.component';
+import { SubCategoriaListarComponent } from './sub-categoria/sub-categoria-listar/sub-categoria-listar.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { UsuarioListarComponent } from './usuario/usuario-listar/usuario-listar.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoFormComponent } from './produto/produto-form/produto-form.component';
+import { ProdutoListarComponent } from './produto/produto-listar/produto-listar.component';
+import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -31,6 +44,18 @@ import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-p
     FormaDePagamentoComponent,
     FormaDePagamentoAdicionarComponent,
     FormaDePagamentoListarComponent,
+    SubCategoriaComponent,
+    SubCategoriaFormComponent,
+    SubCategoriaListarComponent,
+    UsuarioComponent,
+    UsuarioFormComponent,
+    UsuarioListarComponent,
+    ProdutoComponent,
+    ProdutoFormComponent,
+    ProdutoListarComponent,
+    ClienteComponent,
+    ClienteFormComponent,
+    ClienteListarComponent    
   ],
   imports: [
     BrowserModule,
@@ -48,8 +73,12 @@ import { FormaDePagamentoListarComponent } from './forma-de-pagamento/forma-de-p
       }
     ),
     AngularFireStorageModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
-  providers: [],
+  providers: [
+    provideNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
