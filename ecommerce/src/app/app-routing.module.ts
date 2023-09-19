@@ -19,6 +19,12 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { FornecedorListarComponent } from './fornecedor/fornecedor-listar/fornecedor-listar.component';
+import { FornecedorFormComponent } from './fornecedor/fornecedor-form/fornecedor-form.component';
+import { EstadoComponent } from './estado/estado.component';
+import { EstadoListarComponent } from './estado/estado-listar/estado-listar.component';
+import { EstadoFormComponent } from './estado/estado-form/estado-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -144,6 +150,52 @@ const routes: Routes = [
       {
         path: 'editar/:indice',
         component: ClienteFormComponent
+      }
+    ]
+  },
+  {
+    path: 'fornecedor',
+    component: FornecedorComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: FornecedorListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: FornecedorFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: FornecedorFormComponent
+      }
+    ]
+  },
+  {
+    path: 'estado',
+    component: EstadoComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'listar',
+        pathMatch: 'full'
+      },
+      {
+        path: 'listar',
+        component: EstadoListarComponent
+      },
+      {
+        path: 'adicionar',
+        component: EstadoFormComponent
+      },
+      {
+        path: 'editar/:indice',
+        component: EstadoFormComponent
       }
     ]
   }

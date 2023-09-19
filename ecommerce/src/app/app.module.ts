@@ -30,6 +30,12 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 import { ClienteListarComponent } from './cliente/cliente-listar/cliente-listar.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { EstadoComponent } from './estado/estado.component';
+import { EstadoFormComponent } from './estado/estado-form/estado-form.component';
+import { EstadoListarComponent } from './estado/estado-listar/estado-listar.component';
+import { FornecedorComponent } from './fornecedor/fornecedor.component';
+import { FornecedorFormComponent } from './fornecedor/fornecedor-form/fornecedor-form.component';
+import { FornecedorListarComponent } from './fornecedor/fornecedor-listar/fornecedor-listar.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +61,13 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     ProdutoListarComponent,
     ClienteComponent,
     ClienteFormComponent,
-    ClienteListarComponent    
+    ClienteListarComponent,
+    EstadoComponent,
+    EstadoFormComponent,
+    EstadoListarComponent,
+    FornecedorComponent,
+    FornecedorFormComponent,
+    FornecedorListarComponent    
   ],
   imports: [
     BrowserModule,

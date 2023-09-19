@@ -1,0 +1,32 @@
+<div class="card">
+  <button class="btn btn-success" routerLink="../adicionar">Novo</button>
+  <div class="card-body">
+    <h5 class="card-title">Lista de estados</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#ID</th>
+          <th scope="col">estado</th>
+          <th scope="col">Ação</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estado of dados">
+          <th scope="row">{{ estado.indice }}</th>
+          <td>{{ estado.descricao }}</td>
+          <td>
+            <button class="btn btn-warning" (click)="editar(estado.indice)">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="excluir(estado.indice)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
