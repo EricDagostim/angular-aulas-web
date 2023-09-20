@@ -35,8 +35,18 @@ export class FornecedorListarComponent {
 
           this.dados.push({
             id: e.id,
-            descricao: e.descricao,
+            nomeFantasia: e.nomeFantasia,
             categoria: estado.descricao,
+            estadoId: estado.descricao,
+            razaoSocial: e.razaoSocial,
+            cnpj: e.cnpj,
+            contato: e.contato,
+            email: e.email,
+            logradouro: e.logradouro,
+            complemento: e.complemento,
+            bairro: e.bairro,
+            cidade: e.cidade, 
+
             indice: Object.keys(snapshot.val())[i]
           });
         }
