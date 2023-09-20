@@ -28,7 +28,7 @@ export class EstadoService {
       .then();
   }
 
-  editar(dados: any, indice: string) {
+  editar(indice: string, dados: any) {
     this.ref().child('/' + indice).update(dados)
       .then();
   }

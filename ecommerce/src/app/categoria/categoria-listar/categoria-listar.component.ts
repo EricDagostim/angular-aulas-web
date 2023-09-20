@@ -54,11 +54,4 @@ export class CategoriaListarComponent implements OnInit {
       .router
       .navigate(['/categoria/adicionar/' + key]);
   }
-
-
-
-
-
-
-
 }

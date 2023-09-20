@@ -1,24 +1,18 @@
-<div class="d-flex justify-content-between">
-    <h2>Estado</h2>
-    <button class="btn btn-primary" routerLink="/estado">Listar</button>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro Estado</h5>
+
+    <form class="row g-3">
+      <div class="col-12">
+        <label for="descricao" class="form-label">Descrição Estado</label>
+        <input type="text" name="descricao" class="form-control" id="descricao" [(ngModel)]="descricao">
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary m-2" (click)="salvar()">Salvar</button>
+        <button type="reset" class="btn btn-secondary m-2" routerLink="../listar">Voltar</button>
+      </div>
+    </form>
+
+  </div>
 </div>
-<form class="row g-3">
-    <div class="col-12">
-      <label class="form-label" for="estadoId">estado</label>
-      <select name="estadoId" class="form-control" [(ngModel)] = "estadoId" id="estadoId">
-        <option value="">Selecionar estado</option>
-        <option
-          *ngFor="let estado of estados"
-          [value]="estado.indice"
-          [innerHTML]="estado.descricao"
-        ></option>
-      </select>
-    </div>
-    <div class="col-12">
-        <label for="descricao" class="form-label">descricao</label>
-        <input type="text" class="form-control" id="descricao" [(ngModel)] = "descricao" name="descricao">
-    </div>
-    <div class="text-center">
-        <button type="submit" class="btn btn-success" (click)="salvar()">Salvar</button>
-    </div>
-</form>

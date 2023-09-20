@@ -42,6 +42,6 @@ export class EstadoListarComponent {
   }
 
   editar(key: string) {
-    this.route.navigate(['/estado/adicionar/' + key]);
+    this.route.navigate(['/estado/editar/' + key]);
   }
 }
